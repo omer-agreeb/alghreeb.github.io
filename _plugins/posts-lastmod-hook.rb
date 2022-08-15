@@ -3,7 +3,6 @@
 # Check for changed posts
 
 Jekyll::Hooks.register :posts, :post_init do |post|
-
   commit_num = `git rev-list --count HEAD "#{ post.path }"`
 
   if commit_num.to_i > 1
